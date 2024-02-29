@@ -15,7 +15,6 @@ def median(arr):
         return (mid1 + mid2) / 2
 
 def solution(arr , r , c):
-
     result = []
     for i in range(r):
         median_arr = []
