@@ -3,7 +3,7 @@ package java_2;
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class Boj_11931 {
     public void run() throws IOException
     {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -30,6 +30,6 @@ public class Main {
     
     public static void main(String[] args) throws IOException
     {
-        new Main().run();
+        new Boj_11931().run();
     }
 }
