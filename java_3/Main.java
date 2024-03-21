@@ -4,33 +4,40 @@ import java.io.*;
 import java.util.*;
 
 public class Main{
-    public boolean isHol(int n)
-    {
-        if(n % 2 != 0)
-            return true;
-        else
-            return false;
-    }
-    
     public void run() throws IOException
     {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(br.readLine());
+        long minn = 0;
 
-        int n = Integer.parseInt(st.nextToken());
+        if(n % 1 != 0)
+        {
+            int height = (int)(n / 1) + 1;
+            minn = 2 + (height * 2);
+        }
+        else
+        {
+            int height = (int)(n / 1);
+            minn = 2 + (height * 2);
+        }
 
-        st = new StringTokenizer(br.readLine());
-        Integer[] arr = new Integer[n];
+        for(int k = 2 ; k <= n; k++)
+        {
+            long height = (long)(n / k);
+            if(n % k != 0)
+                height++;
 
+            long dul = (k * 2) + (height * 2);
+            
+            if(dul < minn)
+                minn = dul;
+        }
 
-        for(int i = 0 ; i < n ; i++)
-            arr[i] = Integer.parseInt(st.nextToken());
-        
-        int result = 0;
-
-        
+        System.out.println(minn);
     }
     
     public static void main(String[] args) throws IOException
-    {}
+    {
+        new Main().run();
+    }
 }
