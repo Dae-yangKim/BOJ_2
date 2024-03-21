@@ -1,7 +1,6 @@
 package java_3;
 
 import java.io.*;
-import java.util.*;
 
 public class Main{
     public void run() throws IOException
@@ -10,23 +9,30 @@ public class Main{
         int n = Integer.parseInt(br.readLine());
         long minn = 0;
 
-        if(n % 1 != 0)
+        if(n <= 2)
         {
-            int height = (int)(n / 1) + 1;
-            minn = 2 + (height * 2);
+            minn = (1 * 2) + (1 * 2);
         }
         else
         {
-            int height = (int)(n / 1);
-            minn = 2 + (height * 2);
+            if(n % 2 == 0)
+            {
+                long height = (long)(n / 2) - 1;
+                minn = (height * 2) + (1 * 2);
+            }
+            else
+            {
+                long height = (long)(n / 2);
+                minn = (height * 2) + (1 * 2);
+            }
         }
 
         for(int k = 2 ; k <= n; k++)
         {
-            long height = (long)(n / k);
-            if(n % k != 0)
-                height++;
-
+            long height = (long)(n / (k + 1));
+            if(n % (k + 1) == 0)
+                height--;
+            
             long dul = (k * 2) + (height * 2);
             
             if(dul < minn)
