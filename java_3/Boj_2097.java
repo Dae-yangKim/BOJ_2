@@ -2,7 +2,7 @@ package java_3;
 
 import java.io.*;
 
-public class Main{
+public class Boj_2097{
     public void run() throws IOException
     {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -44,6 +44,6 @@ public class Main{
     
     public static void main(String[] args) throws IOException
     {
-        new Main().run();
+        new Boj_2097().run();
     }
 }
