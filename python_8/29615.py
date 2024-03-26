@@ -11,7 +11,7 @@ idx = 0
 count = 0
 for f in friends:
     for i in range(len(arr)):
-        if arr[i] == f:
+        if arr[i] == f and M <= i:
             if i == idx:
                 idx += 1
             else:
